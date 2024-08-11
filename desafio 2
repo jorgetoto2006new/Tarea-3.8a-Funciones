@@ -1,0 +1,21 @@
+    # Creamos una funcion y la denominamos convertir mayusculas iniciales.
+def convertir_mayusculas_iniciales(cadena):
+  
+    # Creamos una lista vacia donde almacenaremos las palabras.
+  
+  palabras = cadena.split()  # Divide la cadena en palabras
+
+    # Mediantes un bucle for recorremos cada palabra en la lista.
+
+    # Usamos la funcion capitalize() para convertir la primera letra de cada palabra a mayúscula.
+  
+  palabras_convertidas = [palabra.capitalize() for palabra in palabras]
+  return ' '.join(palabras_convertidas)
+
+    # Imprimimos la cadena convertida.
+
+# Ejemplo para probar la funcion:
+
+cadena = "esto es un ejercicio para programacion"
+resultado = convertir_mayusculas_iniciales(cadena)
+print(resultado)  # Salida: "Esto Es Un Ejercicio Para Programacion"
