@@ -1,0 +1,63 @@
+# 1. Función para verificar si un número es primo
+
+def es_primo(numero):
+    """Verifica si un número es primo.
+    usamos la funcion if para verificar si el numero es mayor o igual a 2.
+    si es mayor o igual a 2, se verifica si el numero es divisible por 2.
+     si es divisible por 2, no es primo."""
+
+    if numero < 2:
+        return False
+# si el numero es mayor o igual a 2, se verifica si el numero es divisible por 2. Si es divisible por 2, no es primo.
+    
+# mediante el uso de la funcion range, se verifica si el numero es divisible por cualquier numero entre 2 y el numero.
+    
+    # si el numero es divisible por cualquier numero entre 2 y el numero, no es primo.
+
+    for i in range(2, int(numero ** 0.5) + 1):
+# usando if, se verifica si el numero es divisible por i.
+        
+        if numero % i == 0:
+            return False
+    return True
+
+
+# 2. Función para contar números primos en una lista
+
+# Esta función recorrerá una lista y contará cuántos de sus elementos son números primos.
+
+
+def contar_primos(lista):
+    """Cuenta la cantidad de números primos en una lista dada."""
+    contador = 0
+    for numero in lista:
+        if es_primo(numero):
+            contador += 1
+    return contador
+
+# 3. Implementación del ⁠main ⁠
+
+# El ⁠ main ⁠ utilizará ambas funciones anteriores para verificar y contar números primos, mostrando luego los resultados.
+
+
+def main():
+    """Función principal que integra la verificación y conteo de números primos."""
+    numeros = [2, 3, 4, 5, 10, 12, 15, 14, 17, 19, 22]
+    print(f"Números a verificar: {numeros}")
+    print("_____________________________________________________________")
+
+    # Verificación de si cada número es primo
+    for numero in numeros:
+        resultado = "es primo" if es_primo(numero) else "no es primo"
+        print(f"* El número {numero} {resultado}.")
+
+    # Contar cuántos números primos hay en la lista
+    
+    cantidad_primos = contar_primos(numeros)
+    print("__________________________________________")
+    
+    print(f"Cantidad de números primos en la lista: {cantidad_primos}")
+
+# Ejecutar el main
+if __name__ == "__main__":
+    main()
